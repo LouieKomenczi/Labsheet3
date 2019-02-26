@@ -39,29 +39,29 @@ namespace Labsheet3
 
         private void btnAddExpenses_Click(object sender, RoutedEventArgs e)
         {
-            //Expenses ex = new Expenses();
-            //if (!String.IsNullOrEmpty(tbxCategory.Text))
-            //{
-            //    ex.Category = tbxCategory.Text;
-            //}
-            //else
-            //{
-            //    ex.Category = cbxSelectCategory.SelectedItem as string;
-            //}
+            Expenses ex = new Expenses();
+            if (!String.IsNullOrEmpty(tbxCategory.Text))
+            {
+                ex.Category = tbxCategory.Text;
+            }
+            else
+            {
+                ex.Category = cbxSelectCategory.SelectedItem as string;
+            }
 
-            //ex.Price = Convert.ToDecimal(tbxCost.Text);
-            //ex.ExpenseDate = dpExpenseDate.SelectedDate.Value;
+            ex.Price = Convert.ToDecimal(tbxCost.Text);
+            ex.ExpenseDate = dpExpenseDate.SelectedDate.Value;
 
-            //expenses.Add(ex);
-
-
-            //lbxExpenses.ItemsSource = expenses;
-            //txbResult.Text = GetTotalCost().ToString();
-            //txbNumber.Text = expenses.Count().ToString();
+            expenses.Add(ex);
 
 
-            AddExpense addExp = new AddExpense();
-            addExp.ShowDialog();
+            lbxExpenses.ItemsSource = expenses;
+            txbResult.Text = GetTotalCost().ToString();
+            txbNumber.Text = expenses.Count().ToString();
+
+
+            //AddExpense addExp = new AddExpense();
+            //addExp.ShowDialog();
 
         }
 

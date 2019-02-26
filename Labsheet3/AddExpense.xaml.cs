@@ -19,9 +19,39 @@ namespace Labsheet3
     /// </summary>
     public partial class AddExpense : Window
     {
+        string[] categories = { "travel", "office", "entertainment" };
+
         public AddExpense()
         {
             InitializeComponent();
+            cbxSelectCategory.ItemsSource = categories;
+
+        }
+
+        private void BtnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Expenses ex = new Expenses();
+            if (!String.IsNullOrEmpty(tbxCategory.Text))
+            {
+                ex.Category = tbxCategory.Text;
+            }
+            else
+            {
+                ex.Category = cbxSelectCategory.SelectedItem as string;
+            }
+
+            ex.Price = Convert.ToDecimal(tbxCost.Text);
+            ex.ExpenseDate = dpExpenseDate.SelectedDate.Value;
+
+            MainWindow main = Owner as MainWindow;
+
+            main.Expenses.Add(ex);
+            this.Close();
+        }
+
+        private void BtnCancel_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -8,6 +8,25 @@
         Title="AddExpense" Height="450" Width="800"
         WindowStartupLocation="CenterScreen">
     <Grid>
-        
+        <TextBox x:Name="tbxCategory" Margin="306,69,328,314"/>
+        <Label Content="Custom category" Margin="0,69,565,314" HorizontalAlignment="Right" Width="102"/>
+        <DatePicker x:Name="dpExpenseDate" Margin="306,132,328,252"/>
+        <Label Content="Date" Margin="0,131,592,252" HorizontalAlignment="Right"/>
+        <TextBox x:Name="tbxCost" Margin="306,189,328,189"/>
+        <Label Content="Cost" Margin="0,181,592,205" HorizontalAlignment="Right"/>
+        <ComboBox x:Name="cbxSelectCategory" Margin="306,246,328,135"/>
+        <Label Content="Category" Margin="0,246,584,139" HorizontalAlignment="Right" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="3.7"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="-0.841"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="btnAdd" Content="Add" HorizontalAlignment="Left" Margin="607,116,0,0" VerticalAlignment="Top" Width="75" Click="BtnAdd_Click"/>
+        <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Left" Margin="607,210,0,0" VerticalAlignment="Top" Width="75" Click="BtnCancel_Click"/>
+
     </Grid>
 </Window>
